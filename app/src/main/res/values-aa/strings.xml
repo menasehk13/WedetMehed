@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">WedetMehed</string>
+    <string name="pay_at_the_hotel">በሆቴሉ ይክፈሉ</string>
+    <string name="mobile_banking">የሞባይል ባንኪንግ</string>
+    <string name="confirm_payment">ክፍያ ያረጋግጡ</string>
+    <string name="about_this_app">ስለዚህ መተግበሪያ</string>
+    <string name="third_party_licence">የሶስተኛ ወገን ፈቃድ</string>
+    <string name="profile_setting">የመገለጫ ቅንብር</string>
+    <string name="choose_language">ቋንቋ ይምረጡ</string>
+    <string name="thank_you_for_downloading_this_app">ይህንን መተግበሪያ ስላወረዱ እናመሰግናለን</string>
+    <string name="find_your_nearest_room">በአቅራቢያዎ ያለውን ክፍል ያግኙ</string>
+    <string name="find_nearby">በአቅራቢያ ያግኙ</string>
+    <string name="hotels_and_pensions">ሆቴሎች እና ሞቴል</string>
+    <string name="note_don_t_add_used_txn_id">ማስታወሻ ያገለገለ የግብይት መታወቂያ አይጨምሩ</string>
+    <string name="txn_id">የግብይት መታወቂያ</string>
+    <string name="pay_using_mobile_account_click_here_and_pay_the_total_price_and_add_the_ten_number_below">ይክፈሉ የተንቀሳቃሽ ስልክ ሂሳብ በመጠቀም እዚህ ጠቅ ያድርጉ እና አጠቃላይ ዋጋውን ይክፈሉ ከዚህ በታች ያለውን አስር ቁጥር ይጨምሩ</string>
+    <string name="mobile_payment">የሞባይል ክፍያ</string>
+    <string name="addis_ababa_ethiopia">አዲስ አበባ ኢትዮጵያ</string>
+    <string name="pernight">/ሌሊት</string>
+    <string name="discover">ያግኙ</string>
+    <string name="nearby_rooms">በአቅራቢያ ያሉ ክፍሎች</string>
+    <string name="verification_code">የማረጋገጫ የሚስጥር ቁጥር</string>
+    <string name="please_type_the_verification_code_sent_to_this_mobilenumber">እባክዎ ወደዚህ የሞባይል ቁጥር የተላከውን የማረጋገጫ ኮድ ይተይቡ</string>
+    <string name="didn_t_recive_code">ኮድ አልተቀበሉም?</string>
+    <string name="resend">እንደገና ላክ</string>
+    <string name="select_room">ክፍልን ይምረጡ</string>
+    <string name="pricebreakup">የዋጋ መጠን</string>
+    <string name="roomsize">የክፍል መጠን</string>
+    <string name="booking_price">የቦታ ማስያዣ ዋጋ</string>
+    <string name="nights_your_staying">ምሽቶች ቆይታዎ</string>
+    <string name="service_tax">የአገልግሎት ግብር</string>
+    <string name="total_payable">ጠቅላላ የሚከፈል</string>
+    <string name="procced_to_payment">ወደ ክፍያ ይቀጥሉ</string>
+    <string name="select_language">" ቋንቋ ይምረጡ"</string>
+    <string name="selected_language">የተመረጠ ቋንቋ</string>
+    <string name="english">" እንግሊዝኛ"</string>
+    <string name="amharic">" አማርኛ"</string>
+</resources>

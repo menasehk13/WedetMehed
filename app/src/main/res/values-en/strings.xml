@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="pay_at_the_hotel">Pay At The Hotel</string>
+    <string name="mobile_banking">Mobile Banking</string>
+    <string name="pay_using_paypal" translatable="false">pay Using PayPal</string>
+    <string name="confirm_payment">Confirm Payment</string>
+    <string name="about_this_app">About This App</string>
+    <string name="third_party_licence">Third Party Licence</string>
+    <string name="profile_setting">Profile Setting</string>
+    <string name="choose_language">Choose Language</string>
+    <string name="version" translatable="false">Version</string>
+    <string name="thank_you_for_downloading_this_app">Thank You For Downloading This App</string>
+    <string name="find_your_nearest_room">find your nearest room</string>
+    <string name="find_nearby">Find NearBy</string>
+    <string name="hotels_and_pensions">Hotels And Pensions</string>
+    <string name="note_don_t_add_used_txn_id">Note Don’t Add Used Txn Id</string>
+    <string name="txn_id">Txn Id</string>
+    <string name="pay_using_mobile_account_click_here_and_pay_the_total_price_and_add_the_ten_number_below">Pay using Mobile Account click here and pay the total price and add the ten number below</string>
+    <string name="mobile_payment">Mobile Payment</string>
+    <string name="addis_ababa_ethiopia">Addis Ababa,Ethiopia</string>
+    <string name="pernight">/PerNight</string>
+    <string name="discover">Discover</string>
+    <string name="verification_code">Verification Code</string>
+    <string name="please_type_the_verification_code_sent_to_this_mobilenumber">Please type the verification code sent to this mobilenumber</string>
+    <string name="didn_t_recive_code">Didn\'t Recive code?</string>
+    <string name="resend">Resend</string>
+    <string name="select_room">Select Room</string>
+    <string name="checkin" translatable="false">CheckIn</string>
+    <string name="checkout" translatable="false">CheckOut</string>
+    <string name="pricebreakup">PriceBreakUp</string>
+    <string name="roomsize">RoomSize</string>
+    <string name="booking_price">Booking Price</string>
+    <string name="nights_your_staying">Nights Your Staying</string>
+    <string name="service_tax">Service Tax</string>
+    <string name="total_payable">Total Payable</string>
+    <string name="procced_to_payment">Procced To Payment</string>
+    <string name="nearby_rooms">NearBy Rooms</string>
+    <string name="select_language">Select Language</string>
+    <string name="selected_language">Selected Language</string>
+    <string name="english">English</string>
+    <string name="amharic">Amharic</string>
+    <string name="searching">Searching</string>
+    <string name="about_the_hotel">About The Hotel</string>
+    <string name="address">Address</string>
+    <string name="check_availability">Check Availability</string>
+</resources>

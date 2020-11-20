@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LoginPhoneActivity">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:background="@drawable/loginandverfiy" />
+
+        <ImageView
+            android:transitionName="logo"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_alignParentEnd="true"
+            android:layout_margin="12dp"
+            android:src="@drawable/wedetlogologinpage" />
+    </RelativeLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:fontFamily="sans-serif-black"
+        android:text="Enter Phone"
+        android:id="@+id/textview"
+        android:textAppearance="@style/TextAppearance.AppCompat.Medium"
+        android:textColor="#050505"
+        android:textSize="43dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+<com.airbnb.lottie.LottieAnimationView
+    android:layout_width="150dp"
+    android:layout_height="150dp"
+    android:layout_marginTop="5dp"
+    app:lottie_rawRes="@raw/mobiletapinteractionanimation"
+    app:lottie_loop="true"
+    app:lottie_autoPlay="true"
+    app:layout_constraintTop_toBottomOf="@id/textview"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:weightSum="2"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent">
+        <com.rilixtech.widget.countrycodepicker.CountryCodePicker
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:ccp_textSize="19sp"
+            app:ccp_arrowSize="14sp"
+            app:ccp_hideNameCode="true"
+            app:ccp_showFlag="true"
+            app:ccp_defaultCode="251"
+            android:id="@+id/countrycode"
+            />
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:id="@+id/phonelogin"
+            android:background="@color/transparent"
+            android:padding="9dp"
+            android:textAlignment="textStart"
+            android:hint="PHONE NUMBER"
+            />
+    </LinearLayout>
+    <ImageButton
+        android:id="@+id/buttoncontinue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_margin="50dp"
+        android:background="@drawable/circle_shape"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_baseline_navigate_next_24"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>
