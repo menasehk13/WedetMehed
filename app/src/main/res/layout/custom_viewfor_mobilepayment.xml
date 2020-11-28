@@ -9,6 +9,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardCornerRadius="22dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
@@ -28,7 +29,12 @@
                 android:text="@string/mobile_payment"
                 android:textAppearance="@style/TextAppearance.AppCompat.Headline"
                 android:textSize="19sp" />
-
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:text="txnid"
+    android:id="@+id/showtxnid"/>
             <TextView
                 android:id="@+id/textView11"
                 android:layout_width="match_parent"
@@ -44,6 +50,9 @@
                 android:layout_gravity="center"
                 android:background="@drawable/edit_text_box"
                 android:ems="10"
+                android:inputType="none"
+                android:enabled="false"
+                android:focusable="false"
                 android:hint="@string/txn_id"
                 android:padding="10dp"
                 android:textAlignment="center" />

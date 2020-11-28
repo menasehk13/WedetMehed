@@ -20,12 +20,12 @@
         android:id="@+id/cardview2"
         android:layout_width="93dp"
         android:layout_height="27dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         app:cardBackgroundColor="#F78E41"
         app:cardCornerRadius="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" >
+        app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -129,9 +129,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         app:cardCornerRadius="22dp"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/cardview3">
@@ -244,7 +244,7 @@
             <ImageView
                 android:id="@+id/displaybarcode"
                 android:layout_width="match_parent"
-                android:layout_height="150dp"
+                android:layout_height="270dp"
                 android:layout_margin="10dp"
                 android:scaleType="fitXY" />
 

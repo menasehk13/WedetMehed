@@ -34,7 +34,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:fontFamily="sans-serif-black"
-        android:text="Enter Phone"
+        android:text="@string/enter_phone"
         android:id="@+id/textview"
         android:textAppearance="@style/TextAppearance.AppCompat.Medium"
         android:textColor="#050505"
@@ -79,7 +79,7 @@
             android:background="@color/transparent"
             android:padding="9dp"
             android:textAlignment="textStart"
-            android:hint="PHONE NUMBER"
+            android:hint="@string/phone_number"
             />
     </LinearLayout>
     <ImageButton

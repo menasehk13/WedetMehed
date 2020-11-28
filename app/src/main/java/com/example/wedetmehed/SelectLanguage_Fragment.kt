@@ -31,11 +31,23 @@ class SelectLanguage_Fragment : AppCompatActivity(){
             @RequiresApi(Build.VERSION_CODES.M)
             override fun onItemClick(p0: AdapterView<*>?, p1: View?, p2: Int, p3: Long) {
                 when(p2){
-                    0->PrefManager(applicationContext).updateLanguage("en")
-                    1->{
-                        PrefManager(applicationContext).updateLanguage("aa")
+                    0->{
+                        val sharedPreferences=getSharedPreferences("Language",Context.MODE_PRIVATE)
+                        val edit=sharedPreferences.edit()
+                        edit.putString("language","en")
+                        edit.apply()
                         val intent=Intent(applicationContext,MainActivity::class.java)
                         startActivity(intent)
+                        finish()
+                    }
+                    1->{
+                        val sharedPreferences=getSharedPreferences("Language",Context.MODE_PRIVATE)
+                        val edit=sharedPreferences.edit()
+                        edit.putString("language","aa")
+                        edit.apply()
+                        val intent=Intent(applicationContext,MainActivity::class.java)
+                        startActivity(intent)
+                        finish()
                     }
                 }
 

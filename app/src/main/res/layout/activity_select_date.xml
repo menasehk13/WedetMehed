@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="150dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="24dp"
         android:layout_marginEnd="8dp"
         app:cardBackgroundColor="#FFFFFF"
         app:cardCornerRadius="19dp"
@@ -53,10 +53,12 @@
                         android:textAppearance="@style/TextAppearance.AppCompat.Body2"
                         android:textColor="#090707"
                         android:textSize="20sp" />
-                  <TextView
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="@string/addis_ababa_ethiopia"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/addis_ababa_ethiopia" />
+
                     <TextView
                         android:id="@+id/roomtype1"
                         android:layout_width="wrap_content"
@@ -74,96 +76,29 @@
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardview4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="10dp"
-        app:cardCornerRadius="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/card3">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="12dp"
-            android:orientation="horizontal"
-            android:weightSum="2">
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView10"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/checkin"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/checkin"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:text="TextView"
-                    android:textColor="#100E0E"
-                    android:textSize="16sp" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/textView13"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/checkout"
-                    android:textSize="18sp" />
-
-                <TextView
-                    android:id="@+id/checkout"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="sans-serif-black"
-                    android:text="TextView"
-                    android:textColor="#0C0C0C"
-                    android:textSize="16sp" />
-            </LinearLayout>
-        </LinearLayout>
-    </androidx.cardview.widget.CardView>
-
     <TextView
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:fontFamily="sans-serif-black"
         android:text="@string/pricebreakup"
         android:textSize="19sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/cardview4" />
+        app:layout_constraintBottom_toTopOf="@+id/cardView2"
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
+        android:layout_marginBottom="64dp"
         app:cardCornerRadius="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView6">
+        app:layout_constraintStart_toStartOf="parent">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -186,40 +121,16 @@
                     android:textColor="#131313"
                     android:textSize="20sp" />
 
-                <LinearLayout
+                <TextView
+                    android:id="@+id/roomsizeselect"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:orientation="horizontal">
+                    android:paddingTop="5dp"
+                    android:text="1"
+                    android:textAlignment="viewEnd"
+                    android:textSize="18sp" />
 
-                    <ImageButton
-                        android:id="@+id/minusroomsize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@color/transparent"
-                        app:srcCompat="@drawable/minus" />
-
-                    <TextView
-                        android:id="@+id/roomsizeselect"
-                        android:layout_width="wrap_content"
-                        android:layout_height="35sp"
-                        android:layout_weight="1"
-                        android:background="@drawable/roomsize"
-                        android:paddingTop="5dp"
-                        android:text="1"
-                        android:textAlignment="center"
-                        android:textSize="18sp" />
-
-                    <ImageButton
-                        android:id="@+id/plusroomsize"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_weight="1"
-                        android:background="@color/transparent"
-                        app:srcCompat="@drawable/plus" />
-
-                </LinearLayout>
             </LinearLayout>
 
             <View
@@ -265,18 +176,18 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_margin="12dp">
+                android:layout_margin="12dp"
+                android:orientation="horizontal">
 
                 <TextView
                     android:id="@+id/textView3"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="@string/nights_your_staying"
-                    android:textSize="19sp"
                     android:fontFamily="sans-serif-black"
-                    android:textColor="#101010"/>
+                    android:text="@string/nights_your_staying"
+                    android:textColor="#101010"
+                    android:textSize="19sp" />
 
                 <TextView
                     android:id="@+id/numberofnights"
@@ -284,16 +195,16 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:text="TextView"
-                    android:textSize="19sp"
-                    android:textAlignment="viewEnd"/>
+                    android:textAlignment="viewEnd"
+                    android:textSize="19sp" />
             </LinearLayout>
 
             <View
                 android:id="@+id/view6"
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
-                android:background="#0E0D0D"
-                android:layout_marginTop="12dp"/>
+                android:layout_marginTop="12dp"
+                android:background="#0E0D0D" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -364,7 +275,7 @@
                 android:layout_marginBottom="15dp"
                 android:background="@drawable/button_background"
                 android:text="@string/procced_to_payment"
-                android:textColor="@color/black"/>
+                android:textColor="@color/black" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>

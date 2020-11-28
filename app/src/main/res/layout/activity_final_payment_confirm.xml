@@ -10,13 +10,13 @@
         android:id="@+id/lottieAnimationView"
         android:layout_width="131dp"
         android:layout_height="131dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:lottie_loop="false"
         app:lottie_autoPlay="true"
-        app:lottie_rawRes="@raw/finalcheck"/>
+        app:lottie_loop="false"
+        app:lottie_rawRes="@raw/finalcheck" />
 
     <TextView
         android:id="@+id/textView17"
@@ -199,6 +199,7 @@
         android:layout_marginTop="24dp"
         android:background="@drawable/button_background"
         android:text="Back to home"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/linearLayout" />

@@ -85,26 +85,19 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/otpview" />
-    <LinearLayout
-        android:visibility="invisible"
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/resend"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="15dp"
-        android:gravity="center"
-        android:id="@+id/linearone"
-        app:layout_constraintTop_toBottomOf="@+id/timer">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/didn_t_recive_code"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@string/resend"
-            android:textColor="#000000"
-            android:id="@+id/resend"/>
-    </LinearLayout>
+        android:layout_marginTop="16dp"
+        android:background="@color/transparent"
+        android:drawableStart="@drawable/ic_baseline_replay_24"
+        android:text="@string/resend"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timer" />
 
     <Button
         android:id="@+id/verfiyphonenbutton"

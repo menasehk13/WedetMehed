@@ -16,6 +16,7 @@ import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.widget.ConstraintLayout
 import com.google.android.material.snackbar.Snackbar
+import com.google.firebase.database.FirebaseDatabase
 
 
 class SplashActivity : AppCompatActivity() {
@@ -29,6 +30,7 @@ class SplashActivity : AppCompatActivity() {
     @RequiresApi(Build.VERSION_CODES.M)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        FirebaseDatabase.getInstance().setPersistenceEnabled(true)
         supportActionBar?.hide()
         setContentView(R.layout.activity_splash)
         connecting=findViewById(R.id.connecting)
@@ -59,11 +61,10 @@ class SplashActivity : AppCompatActivity() {
                                 recreate()
                             })
                         snackbar.show()
-                    }else if (firsttime) {
-                           isfirstlounch()
-                        } else {
+                    } else {
                             val intent= Intent(this, LoginActivity::class.java)
                             startActivity(intent)
+                            finish()
                         }
 
 
@@ -77,13 +78,6 @@ class SplashActivity : AppCompatActivity() {
         val connectionmanager=getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
         return connectionmanager.activeNetworkInfo!=null && connectionmanager.activeNetworkInfo!!.isConnectedOrConnecting
     }
-   fun isfirstlounch(){
-        val intent=Intent(this,ChooseLanguageActivity::class.java)
-         startActivity(intent)
-       val sharedPreferences:SharedPreferences=getSharedPreferences("firsttime",Context.MODE_PRIVATE)
-       val edit:SharedPreferences.Editor=sharedPreferences.edit()
-       edit.putBoolean("isfirst",false)
-       edit.apply()
-    }
+
 
 }

@@ -44,4 +44,12 @@
     <string name="about_the_hotel">About The Hotel</string>
     <string name="address">Address</string>
     <string name="check_availability">Check Availability</string>
+    <string name="phone_number">PHONE NUMBER</string>
+    <string name="enter_phone">Enter Phone</string>
+    <string name="login">LOGIN</string>
+    <string name="discover_nearby_rooms">Discover NearBy Rooms</string>
+    <string name="you_haven_t_booked_a_hotel_yet_find_a_hotel_near_by">You haven\'t Booked a hotel Yet Find A hotel Near By</string>
+    <string name="single_room">Single Room</string>
+    <string name="double_room">Double Room</string>
+    <string name="suit_room">Suit Room</string>
 </resources>

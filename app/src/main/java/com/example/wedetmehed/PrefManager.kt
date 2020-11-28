@@ -14,9 +14,9 @@ class PrefManager(var  context:Context) {
             edit.putString("Username",username)
             edit.apply()
         }
-    fun getusername(): String? {
+    fun getusername(): String {
         val sharedPreferences=context.getSharedPreferences(saveusername,Context.MODE_PRIVATE)
-        return sharedPreferences.getString("Username","username")
+        return sharedPreferences.getString("Username","username").toString()
     }
 
     @SuppressLint("CommitPrefEdits")
@@ -26,8 +26,8 @@ class PrefManager(var  context:Context) {
         edit.putString("Language",s)
         edit.apply()
     }
-    fun getlanguage(): String? {
-        val sharedPreferences=context.getSharedPreferences(savelanguage,Context.MODE_PRIVATE)
-        return sharedPreferences.getString("Language","en")
+    fun getlanguage():String{
+        val sharedPreferences=context.getSharedPreferences("Language",Context.MODE_PRIVATE)
+        return sharedPreferences.getString("language","en").toString()
     }
 }

@@ -6,9 +6,13 @@ import android.graphics.Bitmap
 import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import androidmads.library.qrgenearator.QRGContents
+import androidmads.library.qrgenearator.QRGContents.Type.TEXT
+import androidmads.library.qrgenearator.QRGEncoder
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.view.ContextThemeWrapper
@@ -18,7 +22,9 @@ import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.google.zxing.BarcodeFormat
+import com.google.zxing.WriterException
 import com.google.zxing.oned.Code128Writer
+import com.google.zxing.qrcode.QRCodeWriter
 import com.squareup.picasso.Picasso
 
 class DisplayMyReservation : AppCompatActivity() {
@@ -35,6 +41,7 @@ class DisplayMyReservation : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_display_my_reservation)
+        supportActionBar?.hide()
         hotelname=findViewById(R.id.displayhotelname)
         rootype=findViewById(R.id.displayroomtype)
         hotelimage=findViewById(R.id.displayimage)
@@ -77,7 +84,17 @@ class DisplayMyReservation : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.M)
     private fun displaybitmap(txnid: String) {
-        val widthPixels = resources.getDimensionPixelSize(R.dimen.width_barcode)
+        val qrgEncoder= QRGEncoder(txnid,null, TEXT,500)
+        try {
+            val bitmap:Bitmap=qrgEncoder.bitmap
+            barcodeimage.setImageBitmap(bitmap)
+        }catch (e:WriterException){
+            Log.d("value", "displaybitmap: "+e.message)
+        }
+
+
+
+        /*val widthPixels = resources.getDimensionPixelSize(R.dimen.width_barcode)
         val heightPixels = resources.getDimensionPixelSize(R.dimen.height_barcode)
         barcodeimage.setImageBitmap(
             createrBarcodeBitmap(
@@ -88,6 +105,8 @@ class DisplayMyReservation : AppCompatActivity() {
                 heightPixels = heightPixels
             )
         )
+
+         */
     }
 
     private fun createrBarcodeBitmap(
@@ -97,9 +116,9 @@ class DisplayMyReservation : AppCompatActivity() {
         widthPixels: Int,
         heightPixels: Int,
     ): Bitmap {
-        val bitMatrix = Code128Writer().encode(
+        val bitMatrix = QRCodeWriter().encode(
             barcodeValue,
-            BarcodeFormat.CODE_128,
+            BarcodeFormat.QR_CODE,
             widthPixels,
             heightPixels
         )

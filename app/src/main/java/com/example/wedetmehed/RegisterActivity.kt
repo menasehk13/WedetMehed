@@ -3,6 +3,7 @@
 package com.example.wedetmehed
 
 import android.annotation.SuppressLint
+import android.app.AlertDialog
 import android.app.DatePickerDialog
 import android.content.ContentResolver
 import android.content.Intent
@@ -24,16 +25,18 @@ import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.storage.FirebaseStorage
 import com.squareup.picasso.Picasso
+import dmax.dialog.SpotsDialog
 import jp.wasabeef.picasso.transformations.CropCircleTransformation
 import java.util.*
 
-class RegisterActivity : AppCompatActivity(), View.OnClickListener {
+class RegisterActivity : BaseActivity(), View.OnClickListener {
     private lateinit var fullname:EditText
     private lateinit var lastname:EditText
     private lateinit var email:EditText
     private lateinit var date:EditText
     private lateinit var imagepicker:ImageView
     private lateinit var register:Button
+    private lateinit var alertDialog: AlertDialog
     private var PICKER:Int=300
     private  var imagepath:Uri?=null
     @SuppressLint("SetTextI18n")
@@ -49,6 +52,11 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
         imagepicker=findViewById(R.id.profilepic)
         register=findViewById(R.id.register)
         date.setOnClickListener(){
+            alertDialog=SpotsDialog.Builder()
+                .setContext(this)
+                .setMessage("Uploading Info Please Wait.....")
+                .setCancelable(false)
+                .build()
             val c=Calendar.getInstance()
             c.add(Calendar.YEAR,-19)
            val yearof=c.get(Calendar.YEAR)
@@ -93,6 +101,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     override fun onClick(p0: View?) {
+
        if(imagepath!=null){
            val firstname:String = fullname.text.toString()
            val lname=lastname.text.toString()
@@ -119,6 +128,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                date.isFocusable.and(true)
                return
            }
+           alertDialog.show()
            val user=FirebaseAuth.getInstance()
            val uId:String=user.uid.toString()
            val collection=FirebaseFirestore.getInstance().collection("Users").document(uId)
@@ -135,11 +145,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                        "PhoneNumber" to phonenumber,
                        "ImagePath" to imagefile
                    )
+                   val prefManager=PrefManager(this)
+                   prefManager.saveUserName(firstname)
                    collection.set(users).addOnCompleteListener(){
                        if (it.isSuccessful){
                            val intnet=Intent(this,MainActivity::class.java)
-                           val prefManager=PrefManager(applicationContext)
-                           prefManager.saveUserName(firstname)
+
                            startActivity(intnet)
                            finish()
                        }
@@ -173,6 +184,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                date.isFocusable.and(true)
                return
            }
+           alertDialog.show()
            val user=FirebaseAuth.getInstance()
            val uId:String=user.uid.toString()
            val collection=FirebaseFirestore.getInstance().collection("Users").document(uId)
@@ -183,12 +195,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
                "Birthdate" to datepicked
                ,"PhoneNumber" to phonenumber
            )
-
+           val prefManager=PrefManager(this)
+           prefManager.saveUserName(firstname)
            collection.set(users).addOnCompleteListener(){
                if (it.isSuccessful){
                    val intnet=Intent(this,MainActivity::class.java)
-                   val prefManager=PrefManager(applicationContext)
-                   prefManager.saveUserName(firstname)
+
                    startActivity(intnet)
                    finish()
                }

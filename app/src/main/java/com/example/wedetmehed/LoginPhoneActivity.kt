@@ -15,8 +15,6 @@ class LoginPhoneActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         supportActionBar?.hide()
         setContentView(R.layout.activity_login_phone)
-        val prefManager=PrefManager(this)
-        Log.d("language", prefManager.getlanguage().toString())
         val countrycode=findViewById<CountryCodePicker>(R.id.countrycode)
         val phonenum=findViewById<EditText>(R.id.phonelogin)
         val login=findViewById<ImageButton>(R.id.buttoncontinue)

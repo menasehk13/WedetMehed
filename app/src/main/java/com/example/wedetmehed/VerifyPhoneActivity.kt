@@ -7,6 +7,7 @@ import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -16,6 +17,7 @@ import com.google.firebase.FirebaseException
 import com.google.firebase.auth.*
 import com.google.firebase.auth.PhoneAuthProvider.*
 import com.google.firebase.firestore.FirebaseFirestore
+import dmax.dialog.SpotsDialog
 import java.util.concurrent.TimeUnit
 import kotlin.math.log10
 
@@ -24,7 +26,7 @@ class VerifyPhoneActivity : AppCompatActivity() {
     lateinit var verificationId:String
     lateinit var otpTextView: OtpTextView
     private lateinit var timer:TextView
-    lateinit var linearLayout:LinearLayout
+    private lateinit var resend:Button
     private lateinit var  phonenum:String
     lateinit var verfiyButton:Button
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -33,31 +35,41 @@ class VerifyPhoneActivity : AppCompatActivity() {
         setContentView(R.layout.activity_verify_phone)
         otpTextView=findViewById(R.id.otpview)
         timer=findViewById(R.id.timer)
-        linearLayout=findViewById(R.id.linearone)
+        resend=findViewById(R.id.resend)
         verfiyButton=findViewById(R.id.verfiyphonenbutton)
        phonenum= intent.getStringExtra("Phone").toString()
         sendsmsmessage(phonenum)
-
+         val alertDialog=SpotsDialog.Builder()
+             .setContext(this)
+             .setCancelable(false)
+             .setMessage("Verfying Please Wait A Moment")
+             .build()
         val countDownTimer=object :CountDownTimer(60000,1000){
             @SuppressLint("SetTextI18n")
             override fun onTick(p0: Long) {
-                val minute=p0
+                val minute=(p0/(1000*60))%60
                 val second=(p0/1000)%60
                 timer.text="$minute:$second"
 
             }
 
             override fun onFinish() {
+                resend.visibility= View.VISIBLE
 
             }
 
         }.start()
+        resend.setOnClickListener(){
+            countDownTimer.start()
+            resend.visibility=View.INVISIBLE
+        }
             verfiyButton.setOnClickListener(){
                 val code:String=otpTextView.otp.toString()
                 if (code.isEmpty()){
                     otpTextView.showError()
                     return@setOnClickListener
                 }
+                alertDialog.show()
                 VerifyCode(code)
             }
     }
@@ -103,6 +115,9 @@ class VerifyPhoneActivity : AppCompatActivity() {
                   val collection=FirebaseFirestore.getInstance().collection("Users").document(userid)
                   collection.get().addOnSuccessListener(){
                       if (it.exists()){
+                          val username=it.getString("FirstName").toString()
+                          val prefManager=PrefManager(applicationContext)
+                          prefManager.saveUserName(username)
                           Toast.makeText(this,"Already Have Account",Toast.LENGTH_LONG).show()
                           val intent=Intent(this,MainActivity::class.java)
                           startActivity(intent)

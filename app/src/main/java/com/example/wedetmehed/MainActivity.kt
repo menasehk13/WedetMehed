@@ -1,5 +1,6 @@
 package com.example.wedetmehed
 
+import android.Manifest
 import android.content.pm.PackageManager
 import android.opengl.Visibility
 import androidx.appcompat.app.AppCompatActivity
@@ -11,16 +12,24 @@ import androidx.fragment.app.FragmentContainerView
 import androidx.fragment.app.FragmentTransaction
 import android.view.View
 import com.etebarian.meowbottomnavigation.MeowBottomNavigation
+import com.google.firebase.database.FirebaseDatabase
 
 class MainActivity :BaseActivity() {
     private  var CheckPerMISSION:Int=99
+    private var PHONEPERMISSION:Int=11
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         supportActionBar?.hide()
         if (ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_FINE_LOCATION)!=PackageManager.PERMISSION_GRANTED
-            && ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED)
+            && ContextCompat.checkSelfPermission(this,android.Manifest.permission.ACCESS_COARSE_LOCATION)!=PackageManager.PERMISSION_GRANTED
+            &&ContextCompat.checkSelfPermission(this,android.Manifest.permission.CALL_PHONE)!=PackageManager.PERMISSION_GRANTED
+            &&ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_CONTACTS)!=PackageManager.PERMISSION_GRANTED
+            &&ContextCompat.checkSelfPermission(this,android.Manifest.permission.READ_SMS)!=PackageManager.PERMISSION_GRANTED
+            &&ContextCompat.checkSelfPermission(this,Manifest.permission.RECEIVE_SMS)!=PackageManager.PERMISSION_GRANTED)
             checkpermission()
+
+
          val navigate=findViewById<MeowBottomNavigation>(R.id.navigation)
         navigate.add(MeowBottomNavigation.Model(1,R.drawable.ic_baseline_home_24))
         navigate.add(MeowBottomNavigation.Model(2,R.drawable.ic_baseline_book_24))
@@ -45,7 +54,7 @@ class MainActivity :BaseActivity() {
         }
     }
     private fun checkpermission(){
-        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,android.Manifest.permission.ACCESS_COARSE_LOCATION),CheckPerMISSION)
+        ActivityCompat.requestPermissions(this, arrayOf(android.Manifest.permission.ACCESS_FINE_LOCATION,android.Manifest.permission.ACCESS_COARSE_LOCATION,android.Manifest.permission.CALL_PHONE,android.Manifest.permission.READ_CONTACTS,android.Manifest.permission.READ_SMS,Manifest.permission.RECEIVE_SMS),CheckPerMISSION,)
     }
     override fun onRequestPermissionsResult(
         requestCode: Int,
@@ -54,6 +63,13 @@ class MainActivity :BaseActivity() {
     ) {
         when(requestCode){
             CheckPerMISSION->{
+                if (grantResults.isEmpty()||grantResults[0]!= PackageManager.PERMISSION_GRANTED){
+
+                }else{
+
+                }
+            }
+            PHONEPERMISSION->{
                 if (grantResults.isEmpty()||grantResults[0]!= PackageManager.PERMISSION_GRANTED){
 
                 }else{

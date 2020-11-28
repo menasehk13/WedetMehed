@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-
-    <string name="app_name">WedetMehed</string>
     <string name="pay_at_the_hotel">በሆቴሉ ይክፈሉ</string>
     <string name="mobile_banking">የሞባይል ባንኪንግ</string>
     <string name="confirm_payment">ክፍያ ያረጋግጡ</string>
@@ -37,4 +35,14 @@
     <string name="selected_language">የተመረጠ ቋንቋ</string>
     <string name="english">" እንግሊዝኛ"</string>
     <string name="amharic">" አማርኛ"</string>
+    <string name="check_availability">መኖሩን ያረጋግጡ</string>
+    <string name="address">አድራሻ</string>
+    <string name="about_the_hotel">" ስለ ሆቴሉ"</string>
+    <string name="searching">በመፈለግ ላይ</string>
+    <string name="phone_number">የስልክ ቁጥር ያስገቡ</string>
+    <string name="enter_phone">ስልክ ያስገቡ</string>
+    <string name="login">ግባ</string>
+    <string name="discover_nearby_rooms">በአቅራቢያ ያሉ ክፍሎችን ያግኙ</string>
+    <string name="you_haven_t_booked_a_hotel_yet_find_a_hotel_near_by">" ሆቴል አልያዙም ገና በአቅራቢያ የሚገኝ ሆቴል ይፈልጉ"</string>
+
 </resources>

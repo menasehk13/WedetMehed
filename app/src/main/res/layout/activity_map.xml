@@ -42,13 +42,13 @@
     <include layout="@layout/bottom_sheet"/>
 
     <androidx.cardview.widget.CardView
+        android:id="@+id/cardview1"
         android:layout_width="300dp"
         android:layout_height="150dp"
+        android:layout_gravity="bottom|center"
         android:layout_margin="12dp"
-        app:cardCornerRadius="22dp"
-        android:id="@+id/cardview1"
         android:visibility="invisible"
-        android:layout_gravity="bottom|center">
+        app:cardCornerRadius="22dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -58,6 +58,7 @@
                 android:id="@+id/hotelimageof"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:contentDescription="TODO"
                 android:scaleType="fitXY" />
 
         </RelativeLayout>
@@ -65,14 +66,13 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="#6D090808"
-            >
+            android:background="#6D090808">
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentTop="true"
                 android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
                 android:layout_margin="10dp"
                 android:layout_weight="1"
                 android:orientation="vertical">
@@ -94,36 +94,40 @@
                     android:textColor="#F3EFEF"
                     android:textSize="13sp" />
             </LinearLayout>
-               <LinearLayout
-                   android:layout_width="wrap_content"
-                   android:layout_height="wrap_content"
-                   android:orientation="vertical"
-                   android:layout_gravity="start"
-                   android:layout_alignParentBottom="true"
-                   android:layout_alignParentStart="true"
-                   android:layout_margin="12dp">
-                   <TextView
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       android:text="Distance of "
-                       android:textColor="#F3EFEF"
-                       android:id="@+id/distance"
-                       android:drawableStart="@drawable/ic_baseline_location_on_24"/>
-                   <RatingBar
-                       android:layout_width="wrap_content"
-                       android:layout_height="wrap_content"
-                       style="@style/Widget.AppCompat.RatingBar.Small"
-                       android:layout_gravity="center"
-                       android:progressTint="#F88F41"
-                       android:id="@+id/ratingBarselected"
-                       android:progressBackgroundTint="@color/white"/>
-               </LinearLayout>
+
             <LinearLayout
-                android:layout_alignParentEnd="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="top|end"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentBottom="true"
+                android:layout_gravity="start"
+                android:layout_margin="12dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/distance"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/ic_baseline_location_on_24"
+                    android:text="Distance of "
+                    android:textColor="#F3EFEF" />
+
+                <RatingBar
+                    android:id="@+id/ratingBarselected"
+                    style="@style/Widget.AppCompat.RatingBar.Small"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:progressBackgroundTint="@color/white"
+                    android:progressTint="#F88F41" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_gravity="top|end"
                 android:layout_margin="15dp"
                 android:layout_weight="1"
                 android:gravity="end"
@@ -147,16 +151,19 @@
                     android:text="/PerNight"
                     android:textColor="#fff" />
             </LinearLayout>
+
             <Button
-                android:layout_width="wrap_content"
-                android:layout_height="30dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentEnd="true"
                 android:id="@+id/openhotel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="12dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="12dp"
+                android:layout_marginBottom="12dp"
                 android:background="@drawable/button_background"
-                android:text="OPEN"
-                android:layout_margin="12dp"
-                />
+                android:text="OPEN" />
         </RelativeLayout>
 
     </androidx.cardview.widget.CardView>
